@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — LuxeHome Furniture</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .blog-container {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 30px;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .blog-card {
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+    .blog-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .blog-body {
+      padding: 16px;
+    }
+    .blog-meta {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    .blog-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+    .blog-excerpt {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .blog-read-more {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .sidebar {
+      background: var(--light-bg);
+      padding: 20px;
+      border-radius: 8px;
+      height: fit-content;
+    }
+    .sidebar h4 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      margin-bottom: 12px;
+      margin-top: 20px;
+    }
+    .sidebar h4:first-child {
+      margin-top: 0;
+    }
+    .sidebar-item {
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .sidebar-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .sidebar-item a {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+    }
+    .sidebar-item a:hover {
+      color: var(--accent);
+    }
+    .tag {
+      display: inline-block;
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      margin-right: 6px;
+      margin-bottom: 6px;
+      color: var(--text-mid);
+      transition: var(--transition);
+    }
+    .tag:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    @media (max-width: 1024px) {
+      .blog-container {
+        grid-template-columns: 1fr;
+      }
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="logo">
+        <span>LuxeHome</span>
+        <span class="logo-tagline">Fine Furniture</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Landing</a></li>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="shop.html" class="nav-cta">Explore</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <img src="images/modern-living.jpg" alt="Blog" />
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <h1>Design Inspiration & Stories</h1>
+      <p>Ideas, guides, and stories from the world of furniture and interior design.</p>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <section style="padding: 20px 0;">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Blog</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG CONTENT -->
+  <section>
+    <div class="container">
+      <div class="blog-container">
+        <!-- ARTICLES -->
+        <div>
+          <div class="blog-grid">
+            <!-- Article 1 -->
+            <div class="blog-card">
+              <img src="images/contemporary.jpg" alt="Modern Living Room" class="blog-image" />
+              <div class="blog-body">
+                <div class="blog-meta">Interior Design • 5 min read</div>
+                <div class="blog-title">10 Ways to Style a Modern Living Room</div>
+                <p class="blog-excerpt">Discover the principles of modern interior design and how to apply them to create a sophisticated, functional living space.</p>
+                <a href="#" class="blog-read-more">Read More →</a>
+              </div>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="blog-card">
+              <img src="images/dining2.jpg" alt="Dining Guide" class="blog-image" />
+              <div class="blog-body">
+                <div class="blog-meta">Buying Guide • 7 min read</div>
+                <div class="blog-title">How to Choose the Perfect Dining Table</div>
+                <p class="blog-excerpt">Size, shape, material, and style — our comprehensive guide walks you through selecting the ideal dining table for your home.</p>
+                <a href="#" class="blog-read-more">Read More →</a>
+              </div>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="blog-card">
+              <img src="images/outdoor.jpg" alt="Outdoor Living" class="blog-image" />
+              <div class="blog-body">
+                <div class="blog-meta">Outdoor Design • 6 min read</div>
+                <div class="blog-title">Creating the Perfect Outdoor Retreat</div>
+                <p class="blog-excerpt">Transform your patio or garden into a luxurious outdoor living room with our expert tips on furniture selection and arrangement.</p>
+                <a href="#" class="blog-read-more">Read More →</a>
+              </div>
+            </div>
+
+            <!-- Article 4 -->
+            <div class="blog-card">
+              <img src="images/bedroom2.jpg" alt="Bedroom Design" class="blog-image" />
+              <div class="blog-body">
+                <div class="blog-meta">Design Tips • 5 min read</div>
+                <div class="blog-title">Designing a Bedroom That Promotes Better Sleep</div>
+                <p class="blog-excerpt">Learn how furniture placement, materials, and colour psychology can create a bedroom environment that supports restful sleep.</p>
+                <a href="#" class="blog-read-more">Read More →</a>
+              </div>
+            </div>
+
+            <!-- Article 5 -->
+            <div class="blog-card">
+              <img src="images/office-desk.jpg" alt="Home Office" class="blog-image" />
+              <div class="blog-body">
+                <div class="blog-meta">Work Space • 6 min read</div>
+                <div class="blog-title">Designing a Home Office That Boosts Productivity</div>
+                <p class="blog-excerpt">Create an inspiring workspace with ergonomic furniture, proper lighting, and thoughtful design that supports focus and creativity.</p>
+                <a href="#" class="blog-read-more">Read More →</a>
+              </div>
+            </div>
+
+            <!-- Article 6 -->
+            <div class="blog-card">
+              <img src="images/accent-chairs.jpg" alt="Accent Pieces" class="blog-image" />
+              <div class="blog-body">
+                <div class="blog-meta">Styling • 4 min read</div>
+                <div class="blog-title">The Power of Accent Pieces in Interior Design</div>
+                <p class="blog-excerpt">Discover how statement chairs, tables, and accessories can elevate your interior design and reflect your personal style.</p>
+                <a href="#" class="blog-read-more">Read More →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+          <h4>Categories</h4>
+          <div class="sidebar-item"><a href="#">Interior Design</a></div>
+          <div class="sidebar-item"><a href="#">Buying Guides</a></div>
+          <div class="sidebar-item"><a href="#">Design Tips</a></div>
+          <div class="sidebar-item"><a href="#">Sustainability</a></div>
+          <div class="sidebar-item"><a href="#">Trends</a></div>
+
+          <h4>Recent Posts</h4>
+          <div class="sidebar-item"><a href="#">Modern Living Room Styling</a></div>
+          <div class="sidebar-item"><a href="#">Dining Table Selection Guide</a></div>
+          <div class="sidebar-item"><a href="#">Outdoor Space Design</a></div>
+
+          <h4>Tags</h4>
+          <div style="margin-top: 12px;">
+            <span class="tag">Design</span>
+            <span class="tag">Furniture</span>
+            <span class="tag">Interior</span>
+            <span class="tag">Home</span>
+            <span class="tag">Style</span>
+            <span class="tag">Tips</span>
+            <span class="tag">Trends</span>
+            <span class="tag">Eco</span>
+          </div>
+
+          <h4>Newsletter</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 12px;">Get design inspiration and exclusive offers delivered to your inbox.</p>
+          <input type="email" placeholder="Your email" style="width: 100%; padding: 8px; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 8px; font-size: 0.85rem;" />
+          <button style="width: 100%; padding: 8px; background: var(--accent); color: var(--primary); border: none; border-radius: 4px; font-weight: 700; font-size: 0.85rem; cursor: pointer;">Subscribe</button>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo" style="color: var(--accent); margin-bottom: 12px;">
+            <span>LuxeHome</span>
+            <span class="logo-tagline" style="color: rgba(255, 255, 255, 0.6);">Fine Furniture</span>
+          </div>
+          <p>Crafting extraordinary living spaces since 2008.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Landing</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Collections</h4>
+          <ul>
+            <li><a href="shop.html">Living Room</a></li>
+            <li><a href="shop.html">Bedroom</a></li>
+            <li><a href="shop.html">Dining Room</a></li>
+            <li><a href="shop.html">Home Office</a></li>
+            <li><a href="shop.html">Outdoor</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Stay Inspired</h4>
+          <div class="footer-newsletter">
+            <input type="email" placeholder="Your email" />
+            <button type="button">Join</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 LuxeHome. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+    });
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('navLinks').style.display = 
+        document.getElementById('navLinks').style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>
