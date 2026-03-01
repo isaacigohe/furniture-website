@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — LuxeHome Furniture</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .contact-card {
+      background: var(--light-bg);
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+    .contact-card h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .contact-card p {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      margin: 0;
+      line-height: 1.5;
+    }
+    .contact-card a {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .contact-form-wrap {
+      background: var(--light-bg);
+      border-radius: 8px;
+      padding: 32px;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .faq-item {
+      background: var(--white);
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+    .faq-item h4 {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+    .faq-item p {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      margin: 0;
+      line-height: 1.5;
+    }
+    @media (max-width: 1024px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="logo">
+        <span>LuxeHome</span>
+        <span class="logo-tagline">Fine Furniture</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Landing</a></li>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="shop.html" class="nav-cta">Explore</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <img src="images/store2.png" alt="Contact" />
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <h1>Get in Touch</h1>
+      <p>Our team is here to help you create the home you have always imagined.</p>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <section style="padding: 20px 0;">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Contact</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+        <!-- INFO SIDE -->
+        <div>
+          <span class="eyebrow">Contact Information</span>
+          <h2>We Are Here For You</h2>
+          <p style="margin-bottom: 24px;">Whether you are furnishing a single room or an entire home, our design consultants are ready to guide you through every step.</p>
+
+          <div class="contact-card">
+            <h4>Phone</h4>
+            <p><a href="tel:+18005893344">+1 (800) 589-3344</a><br />Mon–Sat, 9:00 AM – 7:00 PM EST</p>
+          </div>
+
+          <div class="contact-card">
+            <h4>Email</h4>
+            <p><a href="mailto:hello@luxehome.com">hello@luxehome.com</a><br />We respond within 24 hours</p>
+          </div>
+
+          <div class="contact-card">
+            <h4>Flagship Showroom</h4>
+            <p>142 Design District Boulevard<br />New York, NY 10014</p>
+          </div>
+
+          <div class="contact-card">
+            <h4>Showroom Hours</h4>
+            <p>
+              <strong>Monday – Friday:</strong> 9:00 AM – 7:00 PM<br />
+              <strong>Saturday:</strong> 10:00 AM – 6:00 PM<br />
+              <strong>Sunday:</strong> Closed
+            </p>
+          </div>
+        </div>
+
+        <!-- FORM SIDE -->
+        <div class="contact-form-wrap">
+          <h3>Send Us a Message</h3>
+          <p style="margin-bottom: 20px; font-size: 0.9rem; color: var(--text-mid);">Fill out the form below and a design consultant will be in touch within one business day.</p>
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name *</label>
+                <input type="text" placeholder="John" required />
+              </div>
+              <div class="form-group">
+                <label>Last Name *</label>
+                <input type="text" placeholder="Smith" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Email *</label>
+                <input type="email" placeholder="john@example.com" required />
+              </div>
+              <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" placeholder="+1 (555) 000-0000" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Subject *</label>
+              <select required>
+                <option value="">Select a subject...</option>
+                <option>Product Inquiry</option>
+                <option>Design Consultation</option>
+                <option>Delivery & Installation</option>
+                <option>Warranty & Support</option>
+                <option>Showroom Appointment</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message *</label>
+              <textarea placeholder="Tell us about your project..." required></textarea>
+            </div>
+            <div class="form-group" style="display: flex; align-items: center; gap: 8px;">
+              <input type="checkbox" id="newsletter" />
+              <label for="newsletter" style="margin: 0; font-size: 0.85rem; text-transform: none; letter-spacing: 0; font-weight: 400; color: var(--text-mid);">I would like to receive design inspiration and offers from LuxeHome.</label>
+            </div>
+            <button type="submit" class="btn btn-dark" style="width: 100%; padding: 12px;">Send Message</button>
+            <div id="formSuccess" style="display: none; background: #e8f5e9; border: 1px solid #a5d6a7; border-radius: 4px; padding: 12px; color: #2e7d32; font-size: 0.85rem; margin-top: 12px; text-align: center;">
+              ✓ Thank you! We will be in touch within one business day.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWROOMS -->
+  <section style="background: var(--light-bg);">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Nationwide Presence</span>
+        <h2>Our Showrooms</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-body">
+            <h4 style="color: var(--primary); margin-bottom: 8px;">New York, NY</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 8px;">142 Design District Blvd<br />New York, NY 10014</p>
+            <p style="font-size: 0.85rem; font-weight: 700; color: var(--accent); margin-bottom: 8px;">+1 (212) 589-3344</p>
+            <a href="#" class="btn btn-dark" style="padding: 8px 16px; font-size: 0.75rem;">Get Directions</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h4 style="color: var(--primary); margin-bottom: 8px;">Los Angeles, CA</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 8px;">8800 Melrose Avenue<br />West Hollywood, CA 90069</p>
+            <p style="font-size: 0.85rem; font-weight: 700; color: var(--accent); margin-bottom: 8px;">+1 (310) 589-3344</p>
+            <a href="#" class="btn btn-dark" style="padding: 8px 16px; font-size: 0.75rem;">Get Directions</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h4 style="color: var(--primary); margin-bottom: 8px;">Chicago, IL</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 8px;">350 North Orleans Street<br />Chicago, IL 60654</p>
+            <p style="font-size: 0.85rem; font-weight: 700; color: var(--accent); margin-bottom: 8px;">+1 (312) 589-3344</p>
+            <a href="#" class="btn btn-dark" style="padding: 8px 16px; font-size: 0.75rem;">Get Directions</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Common Questions</span>
+        <h2>Frequently Asked Questions</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4>How long does delivery take?</h4>
+          <p>Standard in-stock items are delivered within 2–4 weeks. Custom pieces typically require 8–14 weeks.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Do you offer free delivery?</h4>
+          <p>Yes — complimentary white-glove delivery on all orders over $1,500 within the contiguous United States.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Can I customize pieces?</h4>
+          <p>Absolutely. Most pieces are available in a range of fabrics, leathers, wood stains, and finishes.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What is your return policy?</h4>
+          <p>We accept returns on standard items within 30 days of delivery, provided the piece is in original condition.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What does the warranty cover?</h4>
+          <p>Our 10-year warranty covers structural defects in frames, spring systems, and hardware.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Do you offer design consultations?</h4>
+          <p>Yes — our consultants are available for virtual or in-store consultations. Sessions are free of charge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3>12</h3>
+          <p>Showrooms</p>
+        </div>
+        <div class="stat-item">
+          <h3>24h</h3>
+          <p>Response Time</p>
+        </div>
+        <div class="stat-item">
+          <h3>98%</h3>
+          <p>Satisfaction</p>
+        </div>
+        <div class="stat-item">
+          <h3>10yr</h3>
+          <p>Warranty</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo" style="color: var(--accent); margin-bottom: 12px;">
+            <span>LuxeHome</span>
+            <span class="logo-tagline" style="color: rgba(255, 255, 255, 0.6);">Fine Furniture</span>
+          </div>
+          <p>Crafting extraordinary living spaces since 2008.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Landing</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Collections</h4>
+          <ul>
+            <li><a href="shop.html">Living Room</a></li>
+            <li><a href="shop.html">Bedroom</a></li>
+            <li><a href="shop.html">Dining Room</a></li>
+            <li><a href="shop.html">Home Office</a></li>
+            <li><a href="shop.html">Outdoor</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Stay Inspired</h4>
+          <div class="footer-newsletter">
+            <input type="email" placeholder="Your email" />
+            <button type="button">Join</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 LuxeHome. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+    });
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('navLinks').style.display = 
+        document.getElementById('navLinks').style.display === 'flex' ? 'none' : 'flex';
+    });
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('formSuccess').style.display = 'block';
+      e.target.reset();
+      setTimeout(() => {
+        document.getElementById('formSuccess').style.display = 'none';
+      }, 5000);
+    }
+  </script>
+</body>
+</html>
