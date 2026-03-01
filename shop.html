@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop — LuxeHome Furniture</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .shop-container {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 30px;
+    }
+    .sidebar {
+      background: var(--light-bg);
+      padding: 20px;
+      border-radius: 8px;
+      height: fit-content;
+    }
+    .sidebar h4 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      margin-bottom: 12px;
+      margin-top: 20px;
+    }
+    .sidebar h4:first-child {
+      margin-top: 0;
+    }
+    .filter-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+    .filter-item input {
+      cursor: pointer;
+    }
+    .filter-item label {
+      cursor: pointer;
+      margin: 0;
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 1024px) {
+      .shop-container {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        height: auto;
+      }
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 768px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="logo">
+        <span>LuxeHome</span>
+        <span class="logo-tagline">Fine Furniture</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Landing</a></li>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="shop.html" class="nav-cta">Explore</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <img src="images/sofa2.jpg" alt="Shop" />
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <h1>Shop Fine Furniture</h1>
+      <p>Explore our curated collections across every room in your home.</p>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <section style="padding: 20px 0;">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Shop</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP CONTENT -->
+  <section>
+    <div class="container">
+      <div class="shop-container">
+        <!-- SIDEBAR FILTERS -->
+        <aside class="sidebar">
+          <h4>Categories</h4>
+          <div class="filter-item">
+            <input type="checkbox" id="cat-all" checked />
+            <label for="cat-all">All Products</label>
+          </div>
+          <div class="filter-item">
+            <input type="checkbox" id="cat-living" />
+            <label for="cat-living">Living Room</label>
+          </div>
+          <div class="filter-item">
+            <input type="checkbox" id="cat-bedroom" />
+            <label for="cat-bedroom">Bedroom</label>
+          </div>
+          <div class="filter-item">
+            <input type="checkbox" id="cat-dining" />
+            <label for="cat-dining">Dining Room</label>
+          </div>
+          <div class="filter-item">
+            <input type="checkbox" id="cat-office" />
+            <label for="cat-office">Home Office</label>
+          </div>
+          <div class="filter-item">
+            <input type="checkbox" id="cat-outdoor" />
+            <label for="cat-outdoor">Outdoor</label>
+          </div>
+
+          <h4>Style</h4>
+          <div class="filter-item">
+            <input type="checkbox" id="style-modern" />
+            <label for="style-modern">Modern</label>
+          </div>
+          <div class="filter-item">
+            <input type="checkbox" id="style-traditional" />
+            <label for="style-traditional">Traditional</label>
+          </div>
+          <div class="filter-item">
+            <input type="checkbox" id="style-midcentury" />
+            <label for="style-midcentury">Mid-Century</label>
+          </div>
+          <div class="filter-item">
+            <input type="checkbox" id="style-scandinavian" />
+            <label for="style-scandinavian">Scandinavian</label>
+          </div>
+
+          <h4>Material</h4>
+          <div class="filter-item">
+            <input type="checkbox" id="mat-wood" />
+            <label for="mat-wood">Solid Wood</label>
+          </div>
+          <div class="filter-item">
+            <input type="checkbox" id="mat-upholstered" />
+            <label for="mat-upholstered">Upholstered</label>
+          </div>
+          <div class="filter-item">
+            <input type="checkbox" id="mat-leather" />
+            <label for="mat-leather">Leather</label>
+          </div>
+          <div class="filter-item">
+            <input type="checkbox" id="mat-metal" />
+            <label for="mat-metal">Metal</label>
+          </div>
+        </aside>
+
+        <!-- PRODUCTS -->
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+            <h3>Showing 8 Products</h3>
+            <select style="padding: 8px; border: 1px solid var(--border); border-radius: 4px; font-size: 0.9rem;">
+              <option>Featured</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+              <option>Newest First</option>
+            </select>
+          </div>
+
+          <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+              <img src="images/sofa-set.jpg" alt="Balthasar Sofa" class="product-image" />
+              <div class="product-body">
+                <span class="product-badge">Popular</span>
+                <div class="product-name">Balthasar Sofa Set</div>
+                <p class="product-text" style="font-size: 0.85rem; color: var(--text-mid); margin-bottom: 12px;">Elegant Victorian-inspired sofa with carved mahogany frame and premium upholstery.</p>
+                <div class="product-price">$3,299</div>
+                <div class="product-actions">
+                  <a href="#">Details</a>
+                  <a href="#">Inquire</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+              <img src="images/bedroom.jpg" alt="Laura Bedroom" class="product-image" />
+              <div class="product-body">
+                <span class="product-badge" style="background: #e8d5c4; color: var(--primary);">New</span>
+                <div class="product-name">Laura Bedroom Suite</div>
+                <p class="product-text" style="font-size: 0.85rem; color: var(--text-mid); margin-bottom: 12px;">Contemporary white and gold bedroom with mirror, dresser and nightstands.</p>
+                <div class="product-price">$4,799</div>
+                <div class="product-actions">
+                  <a href="#">Details</a>
+                  <a href="#">Inquire</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+              <img src="images/accent-chair.jpg" alt="Mid-Century Chair" class="product-image" />
+              <div class="product-body">
+                <span class="product-badge" style="background: #c8e6c9; color: var(--primary);">Sale</span>
+                <div class="product-name">Mid-Century Accent Chair</div>
+                <p class="product-text" style="font-size: 0.85rem; color: var(--text-mid); margin-bottom: 12px;">Timeless silhouette with green ribbed upholstery and solid oak frame.</p>
+                <div class="product-price"><span style="text-decoration: line-through; color: var(--text-light);">$899</span> $699</div>
+                <div class="product-actions">
+                  <a href="#">Details</a>
+                  <a href="#">Inquire</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+              <img src="images/dining.jpg" alt="Formal Dining" class="product-image" />
+              <div class="product-body">
+                <span class="product-badge">Popular</span>
+                <div class="product-name">Grand Formal Dining Suite</div>
+                <p class="product-text" style="font-size: 0.85rem; color: var(--text-mid); margin-bottom: 12px;">11-piece formal dining set with carved legs and upholstered chairs.</p>
+                <div class="product-price">$7,899</div>
+                <div class="product-actions">
+                  <a href="#">Details</a>
+                  <a href="#">Inquire</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+              <img src="images/office-desk.jpg" alt="Executive Desk" class="product-image" />
+              <div class="product-body">
+                <span class="product-badge" style="background: #e8d5c4; color: var(--primary);">New</span>
+                <div class="product-name">Executive Walnut Desk</div>
+                <p class="product-text" style="font-size: 0.85rem; color: var(--text-mid); margin-bottom: 12px;">Solid walnut top with black steel frame and built-in cable management.</p>
+                <div class="product-price">$1,899</div>
+                <div class="product-actions">
+                  <a href="#">Details</a>
+                  <a href="#">Inquire</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+              <img src="images/outdoor.jpg" alt="Patio Set" class="product-image" />
+              <div class="product-body">
+                <span class="product-badge">Popular</span>
+                <div class="product-name">Sophia Patio Set</div>
+                <p class="product-text" style="font-size: 0.85rem; color: var(--text-mid); margin-bottom: 12px;">8-piece rattan and teak outdoor set with deep cushions and all-weather fabric.</p>
+                <div class="product-price">$3,599</div>
+                <div class="product-actions">
+                  <a href="#">Details</a>
+                  <a href="#">Inquire</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-card">
+              <img src="images/bookshelf.jpg" alt="Bookcase" class="product-image" />
+              <div class="product-body">
+                <span class="product-badge" style="background: #e8d5c4; color: var(--primary);">New</span>
+                <div class="product-name">Napa Open Bookcase</div>
+                <p class="product-text" style="font-size: 0.85rem; color: var(--text-mid); margin-bottom: 12px;">Industrial-style open bookcase with walnut shelves and black steel frame.</p>
+                <div class="product-price">$1,299</div>
+                <div class="product-actions">
+                  <a href="#">Details</a>
+                  <a href="#">Inquire</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-card">
+              <img src="images/outdoor2.jpg" alt="Rope Patio" class="product-image" />
+              <div class="product-body">
+                <span class="product-badge">Popular</span>
+                <div class="product-name">Coastal Rope Patio Set</div>
+                <p class="product-text" style="font-size: 0.85rem; color: var(--text-mid); margin-bottom: 12px;">4-piece rope wicker set with natural teak accents and all-weather cushions.</p>
+                <div class="product-price">$2,199</div>
+                <div class="product-actions">
+                  <a href="#">Details</a>
+                  <a href="#">Inquire</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo" style="color: var(--accent); margin-bottom: 12px;">
+            <span>LuxeHome</span>
+            <span class="logo-tagline" style="color: rgba(255, 255, 255, 0.6);">Fine Furniture</span>
+          </div>
+          <p>Crafting extraordinary living spaces since 2008.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Landing</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Collections</h4>
+          <ul>
+            <li><a href="shop.html">Living Room</a></li>
+            <li><a href="shop.html">Bedroom</a></li>
+            <li><a href="shop.html">Dining Room</a></li>
+            <li><a href="shop.html">Home Office</a></li>
+            <li><a href="shop.html">Outdoor</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Stay Inspired</h4>
+          <div class="footer-newsletter">
+            <input type="email" placeholder="Your email" />
+            <button type="button">Join</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 LuxeHome. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+    });
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('navLinks').style.display = 
+        document.getElementById('navLinks').style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>
